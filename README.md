@@ -1,0 +1,2 @@
+# This is a react and redux  application that uses several components to demonstrate
+how to do basic crud functions: (create, read, update, delete) in conjunction with a database. Basically a blog. Enjoy! 
