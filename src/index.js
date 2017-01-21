@@ -10,10 +10,10 @@ import routes from './routes';
 //browserHistory only deals with everything after '/'ie google.com/post/5
 //only concerned with 'post/5' part. Do not confuse with History library!!!
 import {Router,browserHistory} from 'react-router';
-
+import promise from 'redux-promise';
 import reducers from './reducers';
 
-const createStoreWithMiddleware = applyMiddleware()(createStore);
+const createStoreWithMiddleware = applyMiddleware(promise)(createStore);
 
 ReactDOM.render(
   <Provider store={createStoreWithMiddleware(reducers)}>
