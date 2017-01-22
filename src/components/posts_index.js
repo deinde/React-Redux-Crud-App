@@ -1,8 +1,11 @@
 
 import React,{Component} from 'react';
 import {connect} from 'react-redux';
-import {bindActionCreators} from 'redux';
+//below using new es6 style shortcut, you no longer need  {bindActionCreators}
+// import {bindActionCreators} from 'redux';
 import {fetchPosts} from '../actions/index';
+import {Link} from 'react-router';
+
 
 class PostsIndex extends Component{
 	//react will automatically call componentWillMount function whenever component
@@ -13,7 +16,14 @@ class PostsIndex extends Component{
 	}
 render(){
 	return(
-         <div>List of Blog Posts</div>
+         <div>
+          <div className='text-xs-right'>
+           <Link to='posts/new' className='btn btn-primary'>
+           Add a Post
+           </Link>
+          </div>
+          List of Blog Posts
+         </div>
     )
   }
 
@@ -23,7 +33,7 @@ render(){
 // }
 
 // export default connect(null,mapDispatchToProps)(PostsIndex);
-//below is equivalent to above. No need for mapDispatchToProps New shortcut
+//below is equivalent to above. No need for mapDispatchToProps or bindActionCreators!!  New shortcut
 //export default connect(null, { fetchPosts:fetchPosts } )(PostsIndex);
 //or super es6 shortcut
 export default connect(null, { fetchPosts } )(PostsIndex);
